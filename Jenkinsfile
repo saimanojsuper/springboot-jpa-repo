@@ -26,7 +26,7 @@ pipeline {
 	  
     stage('Jmeter'){
          steps{
-            bat label: 'jmeter  -n -Jjmeter.save.saveservice.output_format=xml -t D:\jmetertestplans\jmeter-demo.jmx -l D:\jmeter-test-results\test-demo.jtl'
+            bat label: 'jmeter',script:'jmeter -n -Jjmeter.save.saveservice.output_format=xml -t C:\\Users\\napmanoj\\Desktop\\final_training\\jmeter\\jpa.jmx -l C:\\Users\\napmanoj\\Desktop\\final_training\\jmeter\\test-demo.jtl'
           }
 	}
         
@@ -34,7 +34,7 @@ pipeline {
          steps{
             bat label: '', script: '''mvn sonar:sonar \
 		 -Dsonar.host.url=http://localhost:9000 \
- 		-Dsonar.login=9384a2658e9c09b92823e7758c88a0d7558b87d1'''
+ 		-Dsonar.login=f7124b0b0d82301ab15bd87e3987da453beb0f05'''
           }
 	}
 	
